@@ -72,6 +72,27 @@ li{margin-bottom:4px;}
 }
 </style>
 
+<style>
+/* ---- reading experience v2 (auto-injected) ---- */
+:root{--fs:15px;}
+@media (max-width:768px){:root{--fs:14px;}}
+body{font-size:var(--fs)!important;}
+html{scroll-behavior:smooth;}
+h2[id],h3[id]{scroll-margin-top:10px;}
+tbody tr:nth-child(even){background:#fafbfc;}
+th{border-bottom:2px solid #d1d5db;}
+h2.part{letter-spacing:.5px;box-shadow:0 2px 6px rgba(0,0,0,.14);}
+h3{border-radius:4px;}
+.qcard,.callout,.fml,.formula,.speak{border-radius:8px;}
+.speak{border-radius:0 8px 8px 8px;}
+a{color:#5b21b6;}
+::selection{background:#e9d5ff;}
+.fsgrp{position:fixed;right:16px;bottom:132px;z-index:60;display:flex;gap:4px;}
+.fsb{background:#fff;border:1px solid #d1d5db;border-radius:6px;width:34px;height:30px;font-weight:700;color:#374151;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15);}
+.fsb:active{background:#e5e7eb;}
+@media (max-width:768px){.fsgrp{right:12px;bottom:108px;}}
+</style>
+
 </head>
 <body>
 
@@ -595,6 +616,18 @@ li{margin-bottom:4px;}
 </nav>
 <script>
 document.querySelectorAll('.m-drawer a').forEach(function(a){a.addEventListener('click',function(){var b=document.getElementById('tocBox');if(b){b.checked=false;}});});
+</script>
+<div class="fsgrp">
+<button class="fsb" onclick="fsAdj(-1)" title="减小字体">A−</button>
+<button class="fsb" onclick="fsAdj(0)" title="恢复默认">A</button>
+<button class="fsb" onclick="fsAdj(1)" title="增大字体">A+</button>
+</div>
+<script>
+(function(){var r=document.documentElement;var saved=parseFloat(localStorage.getItem('fsPref'));
+if(saved){r.style.setProperty('--fs',saved+'px');}
+window.fsAdj=function(d){var v=saved||parseFloat(getComputedStyle(r).getPropertyValue('--fs'))||15;
+if(d===0){saved=undefined;localStorage.removeItem('fsPref');r.style.setProperty('--fs','');return;}
+v=Math.max(12,Math.min(21,v+d));saved=v;r.style.setProperty('--fs',v+'px');localStorage.setItem('fsPref',v);};})();
 </script>
 </body>
 </html>
