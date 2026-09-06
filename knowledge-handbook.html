@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>任浩 · 知识点拓展手册（光学工程 / 材料与电池工艺）</title>
+<title>知识点拓展手册（光学工程 / 材料与电池工艺）</title>
 <style>
 :root{--ink:#1f2937;--line:#d1d5db;--v:#4c1d95;--v-bg:#f5f3ff;--o:#9a3412;--o-bg:#fff7ed;--grey:#9ca3af;--grey-bg:#f9fafb;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -37,12 +37,40 @@ th{background:var(--grey-bg);font-weight:600;}
 .pb{page-break-before:always;}
 @media print{body{padding:10mm 12mm;font-size:13px;} h3,h4{break-after:avoid;} table,.fml,.lq{break-inside:avoid;}}
 </style>
+<style>
+/* ---- mobile & floating nav (auto-injected) ---- */
+.fab{position:fixed;right:16px;bottom:20px;z-index:60;background:#4c1d95;color:#fff;border-radius:24px;padding:10px 16px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.28);cursor:pointer;user-select:none;font-size:.95em;}
+.fab-top{position:fixed;right:16px;bottom:74px;z-index:60;background:#6b7280;color:#fff;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25);}
+.m-mask{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:70;}
+.m-drawer{display:none;position:fixed;top:0;right:0;bottom:0;width:min(84vw,340px);background:#fff;z-index:71;overflow-y:auto;padding:16px 16px 40px;box-shadow:-4px 0 16px rgba(0,0,0,.22);}
+#tocBox:checked ~ .m-mask{display:block;}
+#tocBox:checked ~ .m-drawer{display:block;}
+.m-drawer .close{float:right;font-weight:700;color:#6b7280;cursor:pointer;padding:2px 8px;}
+.m-drawer h4{margin:8px 0 6px;font-size:1em;color:#111827;}
+.m-drawer a{display:block;padding:8px 8px;border-bottom:1px solid #f0f0f0;color:#1f2937;text-decoration:none;font-size:.93em;line-height:1.45;}
+.m-drawer a:active{background:#f5f3ff;}
+.m-drawer .grp{font-weight:700;margin:14px 0 4px;color:#4c1d95;font-size:.9em;}
+@media (max-width:768px){
+  body{padding:14px;font-size:14.5px;}
+  h1{font-size:1.45em;}
+  h2{font-size:1.15em;}
+  .subtitle,.meta{font-size:.85em;}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .toc{padding:10px 12px;}
+  .toc ol{columns:1;}
+  .qcard{padding:10px 12px;}
+  .fml,.speak,.lq,.formula,.callout{padding:6px 10px;}
+  .fab{right:12px;bottom:14px;padding:9px 14px;}
+  .fab-top{right:12px;bottom:64px;width:36px;height:36px;}
+}
+</style>
+
 </head>
 <body>
 
-<h1>任浩 · 知识点拓展手册</h1>
+<h1>知识点拓展手册</h1>
 <p class="subtitle">光学工程 × 材料与电池工艺 ｜ 面试知识体系 · 章节版</p>
-<p class="meta">配套文件：《任浩-项目与面试手册.html》（项目事实与口播）｜ 本手册负责"知识本身"：定义 → 要点 → 公式 → 拓展 → 面试落点</p>
+<p class="meta">配套文件：《-项目与面试手册.html》（项目事实与口播）｜ 本手册负责"知识本身"：定义 → 要点 → 公式 → 拓展 → 面试落点</p>
 
 <div class="toc">
 <strong>目 录</strong>
@@ -89,7 +117,7 @@ th{background:var(--grey-bg);font-weight:600;}
 </ol>
 </div>
 
-<h2 class="part p1">第一部分 光学工程知识体系</h2>
+<h2 id="part1" class="part p1">第一部分 光学工程知识体系</h2>
 
 <h3 id="ch1">第 1 章 几何光学基础</h3>
 
@@ -299,7 +327,7 @@ th{background:var(--grey-bg);font-weight:600;}
 <p><b>拓展：</b>"每条指标必须有验证方法"是系统工程的铁律——写不进验证矩阵的指标等于没有指标；技术状态管理与更改控制保证多方协作不乱。</p>
 <p class="lq"><b>面试落点：</b>应届生讲不出大系统经验很正常，但能主动使用"指标分解 / 验证矩阵 / 接口文件"这套语言，会显著提升系统总体岗位的匹配印象。</p>
 
-<h2 class="part p2 pb">第二部分 材料与电池工艺知识体系</h2>
+<h2 id="part2" class="part p2 pb">第二部分 材料与电池工艺知识体系</h2>
 
 <h3 id="ch9">第 9 章 锂电池与锂硫体系</h3>
 
@@ -549,7 +577,7 @@ th{background:var(--grey-bg);font-weight:600;}
 <p><b>拓展：</b>质量体系框架：ISO9001（通用）、IATF16949（汽车行业，强调缺陷预防与持续改进）；体系的本质是把个人经验变成组织资产。</p>
 <p class="lq"><b>面试落点：</b>应届生没有产线经验，用实验室公共平台管理的小案例（定置、使用登记、异常挂牌）证明现场意识，比空谈 5S 定义有力得多。</p>
 
-<h2 class="part pb" style="background:#0e7490;">第三部分 光模块制造工艺知识体系 <span style="font-size:.72em;font-weight:400;">（面向：新易盛类光通信企业 · PE 工艺/测试/NPI 岗）</span></h2>
+<h2 id="part3" class="part pb" style="background:#0e7490;">第三部分 光模块制造工艺知识体系 <span style="font-size:.72em;font-weight:400;">（面向：新易盛类光通信企业 · PE 工艺/测试/NPI 岗）</span></h2>
 
 <p class="callout"><b>为什么这一部分对你重要：</b>新易盛（成都双流）是全球头部光模块厂商，产品覆盖 400G/800G/1.6T 与硅光方案，主要面向 AI 数据中心。其工艺类岗位（PE 工艺工程师、测试工程师、新产品导入 NPI）的核心知识就是<b>光模块封装与耦合工艺</b>——而你光学天线项目里"准直镜组把光耦合进 APD 光敏面"的经验，与光模块耦合工艺的底层逻辑（对准精度 ↔ 耦合效率）完全同源。本部分基于公开行业资料与招聘信息整理，具体工艺细节以企业实际为准。</p>
 
@@ -700,7 +728,7 @@ th{background:var(--grey-bg);font-weight:600;}
 <p><b>拓展：</b>关键质量特性（CTQ）的选择是工艺质量工作的起点：光模块的 CTQ 典型是耦合功率分布、打线拉力、贴片精度——每个 CTQ 配测量系统与控制图。</p>
 <p class="lq"><b>面试落点：</b>NPI 岗位面试的高分逻辑："我的实验室项目经验 = 一次完整的迷你 NPI"——从设计文件到工艺路线到验证报告，只是规模小；具体产线爬坡经验期待在岗位补齐。</p>
 
-<h2 class="part pb" style="background:#374151;">第四部分 软件工具使用指南 <span style="font-size:.72em;font-weight:400;">（简历所列软件：Zemax / MATLAB / Python / Origin / AutoCAD）</span></h2>
+<h2 id="part4" class="part pb" style="background:#374151;">第四部分 软件工具使用指南 <span style="font-size:.72em;font-weight:400;">（简历所列软件：Zemax / MATLAB / Python / Origin / AutoCAD）</span></h2>
 
 <p class="callout"><b>使用原则：</b>软件题的答案格式永远是"用哪个功能 + 解决什么问题 + 一个真实场景"，而不是背菜单。本章按此格式整理各软件的核心用法与面试表述；标 <span class="pending">[待补]</span> 的地方请用你自己的真实操作案例替换，切勿照本宣科。</p>
 
@@ -765,6 +793,46 @@ th{background:var(--grey-bg);font-weight:600;}
 <p><b>要点：</b>五个软件在一条工程链上各就各位：Zemax 做光学设计 → AutoCAD 做结构与装调图 → MATLAB/Python 做系统仿真与数据处理 → Origin 做结果呈现。链路的关键在"交接文件"：Zemax 的设计参数表交给 CAD、仿真的数据文件交给 Origin——文件命名与版本规范让链条不断。</p>
 <p class="lq"><b>面试落点：</b>收尾句式："我不是孤立地会用五个软件，而是有一条从设计、仿真到出图、汇报的完整工具链。"——这句话本身就是对"软件熟练"的最好定义。</p>
 
-<p class="meta" style="margin-top:26px;border-top:1px solid #d1d5db;padding-top:10px;">本手册为知识拓展层，与《任浩-项目与面试手册.html》（项目事实与口播层）配合使用：面试前先用项目手册恢复"事实记忆"，再用本手册恢复"概念体系"。生成于 2026-09 ｜ 配套简历：renhao.html / renhao.pdf</p>
+<p class="meta" style="margin-top:26px;border-top:1px solid #d1d5db;padding-top:10px;">本手册为知识拓展层，与《-项目与面试手册.html》（项目事实与口播层）配合使用：面试前先用项目手册恢复"事实记忆"，再用本手册恢复"概念体系"。生成于 2026-09 ｜ 配套简历：renhao.html / renhao.pdf</p>
+<input type="checkbox" id="tocBox" hidden>
+<label class="fab" for="tocBox" title="打开目录">☰ 目录</label>
+<a class="fab-top" href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'});" title="回到顶部">↑</a>
+<label class="m-mask" for="tocBox"></label>
+<nav class="m-drawer">
+  <label class="close" for="tocBox">✕ 关闭</label>
+  <h4>目录</h4>
+  <div class="grp"><a href="#part1" style="padding:2px 0;border:none;font-weight:700;color:#4c1d95;">第一部分 光学工程知识体系 ▸</a></div>
+  <a href="#ch1">第 1 章 几何光学基础</a>
+  <a href="#ch2">第 2 章 像差理论</a>
+  <a href="#ch3">第 3 章 反射式望远系统与光学设计</a>
+  <a href="#ch4">第 4 章 薄膜光学与滤光片</a>
+  <a href="#ch5">第 5 章 光电探测与信噪比</a>
+  <a href="#ch6">第 6 章 激光与光束传播</a>
+  <a href="#ch7">第 7 章 大气光学</a>
+  <a href="#ch8">第 8 章 链路预算与系统总体</a>
+  <div class="grp"><a href="#part2" style="padding:2px 0;border:none;font-weight:700;color:#4c1d95;">第二部分 材料与电池工艺知识体系 ▸</a></div>
+  <a href="#ch9">第 9 章 锂电池与锂硫体系</a>
+  <a href="#ch10">第 10 章 纳米材料合成方法</a>
+  <a href="#ch11">第 11 章 涂布与成膜工艺</a>
+  <a href="#ch12">第 12 章 材料表征技术</a>
+  <a href="#ch13">第 13 章 电化学测试方法</a>
+  <a href="#ch14">第 14 章 光致变色与智能材料</a>
+  <a href="#ch15">第 15 章 电池制造全流程</a>
+  <a href="#ch16">第 16 章 质量管理与工艺改进</a>
+  <div class="grp"><a href="#part3" style="padding:2px 0;border:none;font-weight:700;color:#4c1d95;">第三部分 光模块制造工艺知识体系 ▸</a></div>
+  <a href="#ch17">第 17 章 光模块产品与技术基础</a>
+  <a href="#ch18">第 18 章 光器件与芯片</a>
+  <a href="#ch19">第 19 章 封装形式与 COB 工艺流程</a>
+  <a href="#ch20">第 20 章 光学耦合工艺专题</a>
+  <a href="#ch21">第 21 章 测试与可靠性</a>
+  <a href="#ch22">第 22 章 洁净间、ESD 与产线质量管理</a>
+  <div class="grp"><a href="#part4" style="padding:2px 0;border:none;font-weight:700;color:#4c1d95;">第四部分 软件工具使用指南 ▸</a></div>
+  <a href="#ch23">第 23 章 Zemax 使用指南</a>
+  <a href="#ch24">第 24 章 MATLAB 与 Python 仿真使用</a>
+  <a href="#ch25">第 25 章 Origin 与 AutoCAD 使用</a>
+</nav>
+<script>
+document.querySelectorAll('.m-drawer a').forEach(function(a){a.addEventListener('click',function(){var b=document.getElementById('tocBox');if(b){b.checked=false;}});});
+</script>
 </body>
 </html>

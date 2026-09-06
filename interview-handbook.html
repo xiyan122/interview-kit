@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>任浩 · 项目与面试手册（光学工程师 / 产品工艺工程师）</title>
+<title>项目与面试手册（光学工程师 / 产品工艺工程师）</title>
 <style>
 :root{--ink:#111827;--line:#d1d5db;--blue:#1d4ed8;--blue-bg:#eff6ff;--green:#047857;--green-bg:#ecfdf5;--grey:#9ca3af;--grey-bg:#f9fafb;--amber:#b45309;--amber-bg:#fffbeb;}
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -44,25 +44,52 @@ li{margin-bottom:4px;}
 .pb{page-break-before:always;}
 @media print{body{padding:10mm 12mm;font-size:13px;} .qcard,.toc,.callout{break-inside:avoid;} h2,h3{break-after:avoid;}}
 </style>
+<style>
+/* ---- mobile & floating nav (auto-injected) ---- */
+.fab{position:fixed;right:16px;bottom:20px;z-index:60;background:#4c1d95;color:#fff;border-radius:24px;padding:10px 16px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.28);cursor:pointer;user-select:none;font-size:.95em;}
+.fab-top{position:fixed;right:16px;bottom:74px;z-index:60;background:#6b7280;color:#fff;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-weight:700;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.25);}
+.m-mask{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:70;}
+.m-drawer{display:none;position:fixed;top:0;right:0;bottom:0;width:min(84vw,340px);background:#fff;z-index:71;overflow-y:auto;padding:16px 16px 40px;box-shadow:-4px 0 16px rgba(0,0,0,.22);}
+#tocBox:checked ~ .m-mask{display:block;}
+#tocBox:checked ~ .m-drawer{display:block;}
+.m-drawer .close{float:right;font-weight:700;color:#6b7280;cursor:pointer;padding:2px 8px;}
+.m-drawer h4{margin:8px 0 6px;font-size:1em;color:#111827;}
+.m-drawer a{display:block;padding:8px 8px;border-bottom:1px solid #f0f0f0;color:#1f2937;text-decoration:none;font-size:.93em;line-height:1.45;}
+.m-drawer a:active{background:#f5f3ff;}
+.m-drawer .grp{font-weight:700;margin:14px 0 4px;color:#4c1d95;font-size:.9em;}
+@media (max-width:768px){
+  body{padding:14px;font-size:14.5px;}
+  h1{font-size:1.45em;}
+  h2{font-size:1.15em;}
+  .subtitle,.meta{font-size:.85em;}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .toc{padding:10px 12px;}
+  .toc ol{columns:1;}
+  .qcard{padding:10px 12px;}
+  .fml,.speak,.lq,.formula,.callout{padding:6px 10px;}
+  .fab{right:12px;bottom:14px;padding:9px 14px;}
+  .fab-top{right:12px;bottom:64px;width:36px;height:36px;}
+}
+</style>
+
 </head>
 <body>
 
-<h1>任浩 · 项目与面试手册</h1>
+<h1>项目与面试手册</h1>
 <p class="subtitle">光学工程师 / 产品工艺工程师 ｜ 基于真实项目整理 · 详细版</p>
 <p class="meta">2027届硕士毕业生 ｜ 中国兵器科学院第二零九研究所（硕士）· 电子科技大学（本科）｜ 所有 <span class="pending">[待补/待测]</span> 为未提供数据，面试前按保密要求决定口径</p>
 
-<div class="toc">
-<strong>目录</strong>
+<div class="toc"><strong>目 录</strong>
 <ol>
-<li><a href="#opt-guide">光学工程师 · 项目导学（含前置知识与公式速查）</a></li>
-<li><a href="#opt-principle">光学工程师 · 原理与设计决策</a></li>
-<li><a href="#opt-qa">光学工程师 · 面试题库（15 主问 + 追问）</a></li>
-<li><a href="#opt-evidence">光学工程师 · 证据索引</a></li>
-<li><a href="#mat-guide">材料工艺 · 项目导学（含前置知识）</a></li>
-<li><a href="#mat-principle">材料工艺 · 原理与设计决策</a></li>
-<li><a href="#mat-qa">材料工艺 · 面试题库（16 主问 + 追问）</a></li>
-<li><a href="#mat-evidence">材料工艺 · 证据索引</a></li>
-<li><a href="#final-review">考前一天速览</a></li>
+<li><a href="#opt-guide">一、光学工程师 · 项目导学</a></li>
+<li><a href="#opt-principle">二、光学工程师 · 核心原理与关键设计决策</a></li>
+<li><a href="#opt-qa">三、光学工程师 · 面试题库（15 主问 + 追问，全部含口播）</a></li>
+<li><a href="#opt-evidence">四、光学工程师 · 证据索引</a></li>
+<li><a href="#mat-guide">五、材料工艺 · 项目导学</a></li>
+<li><a href="#mat-principle">六、材料工艺 · 核心原理与关键设计决策</a></li>
+<li><a href="#mat-qa">七、材料工艺 · 面试题库（16 主问 + 追问，全部含口播）</a></li>
+<li><a href="#mat-evidence">八、材料工艺 · 证据索引</a></li>
+<li><a href="#final-review">九、考前一天速览（背这一章就够上场）</a></li>
 </ol>
 </div>
 
@@ -266,7 +293,7 @@ li{margin-bottom:4px;}
 <div class="qcard"><p class="q">追问 15b（扩展）：光机设计里温度效应怎么考虑？</p>
 <div class="speak"><span class="s-label">口播</span>温度对光机系统的影响我拆成三条线。一是焦距漂移：材料热胀冷缩改变镜间距和曲率半径，焦面位置跟着漂，对焦机构或补偿设计要覆盖工作温区，我会在模型里做热分析估算焦移量。二是面形变形：温度梯度和不同材料热胀系数不匹配会引起镜面应力变形，轻则像质下降重则光轴偏移，所以结构件选材讲究与镜材热胀系数匹配，微晶玻璃近零膨胀就是为此。三是滤光片和探测器的温漂：前面讲过滤光片通带随温度漂，APD 击穿电压也随温度变，这两处分别用带宽余量和偏置温补兜住。设计收尾时我会把三条线的敏感量汇总成一张温区适配表，确认全温区内指标都成立，而不是只保证常温。</div></div>
 
-<h2 id="opt-evidence" class="optics">四、光学工程师 · 证据索引（面试前备齐，路径 <span class="pending">待补</span>）</h2>
+<h2 id="opt-evidence" class="optics">四、光学工程师 · 证据索引 <span class="pending">待补</span>）</h2>
 <table>
 <tr><th>主题</th><th>关键材料</th><th>对应问题</th></tr>
 <tr><td>系统总体</td><td>接收链路框图、指标分解表（文件名待补）</td><td>简介、Q1、Q10</td></tr>
@@ -485,7 +512,7 @@ li{margin-bottom:4px;}
 <div class="qcard mat"><p class="q">追问 16b（扩展）：5S 和现场管理你怎么理解？</p>
 <div class="speak"><span class="s-label">口播</span>5S 是整理、整顿、清扫、清洁、素养，我的理解它不是打扫卫生，而是让异常"无处藏身"的管理基础设施。整理整顿做到位，物料工具定置定位，缺了什么、多了什么一眼看出来，混料风险大幅下降——电池行业的混料是重大事故源；清扫做到位，设备状态和泄漏点早暴露，点检才有意义；清洁是把前三个 S 制度化，清洁不是一次大扫除而是标准被持续执行；素养是员工按标准自觉执行，这需要管理层把 SOP 做到可执行、把异常上报做成正向激励。我在实验室管理公共水热釜和涂布台时做过缩小版：定置、标签、使用登记、异常挂牌，跑下来最大的体会是——现场乱的地方一定藏着没被发现的问题，现场管理的水平就是质量水平的下限。</div></div>
 
-<h2 id="mat-evidence" class="material">八、材料工艺 · 证据索引（面试前备齐，路径 <span class="pending">待补</span>）</h2>
+<h2 id="mat-evidence" class="material">八、材料工艺 · 证据索引 <span class="pending">待补</span>）</h2>
 <table>
 <tr><th>主题</th><th>关键材料</th><th>对应问题</th></tr>
 <tr><td>项目①合成</td><td>水热/碳化实验记录、参数窗口表（待补）</td><td>Q4-Q6</td></tr>
@@ -502,8 +529,8 @@ li{margin-bottom:4px;}
 <h2 id="final-review" class="pb">九、考前一天速览（背这一章就够上场）</h2>
 
 <h3>9.1 一分钟自我介绍模板（两个方向各一版）</h3>
-<div class="speak"><span class="s-label">光学工程师版</span>面试官好，我是任浩，中国兵器科学院第二零九研究所光学工程专业硕士，本科毕业于电子科技大学光电信息科学与工程，硕士第一年在电子科技大学代培完成课程学习。我最有代表性的经历是一个接收光学天线系统的项目，我担任项目负责人：用卡塞格林物镜做集光，设计了视场光阑加窄带滤光的两层背景抑制结构，配合 APD 完成光电耦合，并用 Python 和 MATLAB 做链路预算仿真、反解系统口径，把整个接收链从光机设计到系统指标打通。我求职方向是光学工程师，希望把光学系统设计和仿真验证的能力落到产品上。</div>
-<div class="speak"><span class="s-label">产品工艺工程师版</span>面试官好，我是任浩，光学工程硕士，本科是电子科技大学光电信息科学与工程。我的经历偏材料和工艺：两个大学生创新项目我都担任第一项目负责人，一个是锂硫电池的功能隔膜——我自己完成了水热合成纳米阵列、刮刀涂敷改性隔膜，再到 SEM/XRD 表征和 CV/EIS 电化学验证的完整流程；另一个做固体光致变色材料，解决有机功能分子的固定化与稳定化，项目优秀结题。合成、涂布、表征、验证这几段我都是亲手做、亲手管的，我求职产品工艺工程师，希望把这些工艺经验放到产线上去放大。</div>
+<div class="speak"><span class="s-label">光学工程师版</span>面试官好，我是，中国兵器科学院第二零九研究所光学工程专业硕士，本科毕业于电子科技大学光电信息科学与工程，硕士第一年在电子科技大学代培完成课程学习。我最有代表性的经历是一个接收光学天线系统的项目，我担任项目负责人：用卡塞格林物镜做集光，设计了视场光阑加窄带滤光的两层背景抑制结构，配合 APD 完成光电耦合，并用 Python 和 MATLAB 做链路预算仿真、反解系统口径，把整个接收链从光机设计到系统指标打通。我求职方向是光学工程师，希望把光学系统设计和仿真验证的能力落到产品上。</div>
+<div class="speak"><span class="s-label">产品工艺工程师版</span>面试官好，我是，光学工程硕士，本科是电子科技大学光电信息科学与工程。我的经历偏材料和工艺：两个大学生创新项目我都担任第一项目负责人，一个是锂硫电池的功能隔膜——我自己完成了水热合成纳米阵列、刮刀涂敷改性隔膜，再到 SEM/XRD 表征和 CV/EIS 电化学验证的完整流程；另一个做固体光致变色材料，解决有机功能分子的固定化与稳定化，项目优秀结题。合成、涂布、表征、验证这几段我都是亲手做、亲手管的，我求职产品工艺工程师，希望把这些工艺经验放到产线上去放大。</div>
 
 <h3>9.2 高频十问速答（每题一句话骨架，展开见前文口播）</h3>
 <table>
@@ -548,6 +575,26 @@ li{margin-bottom:4px;}
 <li><strong>承认边界就是加分</strong>：应届生被问到没做过的环节（量产、精密装调、产线管理），标准句式是"这一段我目前只有 XX 程度的了解，我的 XX 经验可以迁移，这正是我期待在岗位上补齐的"——诚实 + 迁移能力双展示。</li>
 </ol>
 
-<p class="meta" style="margin-top:24px;border-top:1px solid #d1d5db;padding-top:10px;">本手册基于任浩本人提供的项目信息整理 · 未提供数据一律标注待补/待测 · 生成于 2026-09 ｜ 简历源文件：renhao.html / renhao.pdf</p>
+<p class="meta" style="margin-top:24px;border-top:1px solid #d1d5db;padding-top:10px;">本手册基于本人提供的项目信息整理 · 未提供数据一律标注待补/待测 · 生成于 2026-09 ｜ 简历源文件：renhao.html / renhao.pdf</p>
+<input type="checkbox" id="tocBox" hidden>
+<label class="fab" for="tocBox" title="打开目录">☰ 目录</label>
+<a class="fab-top" href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'});" title="回到顶部">↑</a>
+<label class="m-mask" for="tocBox"></label>
+<nav class="m-drawer">
+  <label class="close" for="tocBox">✕ 关闭</label>
+  <h4>目录</h4>
+  <a href="#opt-guide">一、光学工程师 · 项目导学</a>
+  <a href="#opt-principle">二、光学工程师 · 核心原理与关键设计决策</a>
+  <a href="#opt-qa">三、光学工程师 · 面试题库（15 主问 + 追问，全部含口播）</a>
+  <a href="#opt-evidence">四、光学工程师 · 证据索引</a>
+  <a href="#mat-guide">五、材料工艺 · 项目导学</a>
+  <a href="#mat-principle">六、材料工艺 · 核心原理与关键设计决策</a>
+  <a href="#mat-qa">七、材料工艺 · 面试题库（16 主问 + 追问，全部含口播）</a>
+  <a href="#mat-evidence">八、材料工艺 · 证据索引</a>
+  <a href="#final-review">九、考前一天速览（背这一章就够上场）</a>
+</nav>
+<script>
+document.querySelectorAll('.m-drawer a').forEach(function(a){a.addEventListener('click',function(){var b=document.getElementById('tocBox');if(b){b.checked=false;}});});
+</script>
 </body>
 </html>
